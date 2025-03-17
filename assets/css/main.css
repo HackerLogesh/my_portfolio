@@ -542,15 +542,6 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  padding: 80px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .headImage {
   position: absolute;
@@ -562,63 +553,64 @@ section,
   object-fit: cover;
   z-index: 1;
 }
-
-.hero:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 70%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+.aboutPart{
+  padding-top: 150px;
 }
-
-.hero .container {
-  position: absolute;
-  z-index: 3;
-  margin-top: 50px;
-}
-
-.hero h2 {
-  margin: 0;
-  font-size: 64px;
-  font-weight: 700;
-}
-
-.hero p {
-  margin: 5px 0 0 0;
-  font-size: 26px;
-}
-
-.hero p span {
-  letter-spacing: 1px;
-  border-bottom: 2px solid var(--accent-color);
-}
-
-.hero .social-links {
-  margin-top: 25px;
-}
-
-.hero .social-links a {
-  font-size: 24px;
-  display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  line-height: 1;
-  margin-right: 20px;
-  transition: 0.3s;
-}
-
-.hero .social-links a:hover {
-  color: var(--accent-color);
-}
-
+/* Make sure the section adapts to smaller screens */
 @media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    padding: 20px;
+  }
+  .aboutPart{
+    padding-top: 20px;
+  }
+  /* Ensure the image adapts properly */
+  .img_1 img.headImage {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Adjust the text container */
+  .container {
+    display: block;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Make images wrap instead of horizontal overflow */
+  .hero div[style*="position: relative"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+    margin-left: 0; /* Remove negative margin */
+  }
+
+  .hero div[style*="position: relative"] img {
+    width: 120px;
+    height: 120px;
+    margin: 5px; /* Reduce margin */
+  }
+}
+
+/* For very small screens (phones) */
+@media (max-width: 480px) {
   .hero h2 {
-    font-size: 32px;
+    font-size: 22px;
   }
 
   .hero p {
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  .hero div[style*="position: relative"] img {
+    width: 100px;
+    height: 100px;
   }
 }
+
 
 /*--------------------------------------------------------------
 # About Section
