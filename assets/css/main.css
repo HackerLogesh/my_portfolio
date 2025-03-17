@@ -554,7 +554,7 @@ section,
   z-index: 1;
 }
 .aboutPart{
-  padding-top: 150px;
+  padding-top: 160px;
 }
 /* Make sure the section adapts to smaller screens */
 @media (max-width: 768px) {
@@ -563,7 +563,7 @@ section,
     padding: 20px;
   }
   .aboutPart{
-    padding-top: 20px;
+    padding-top: 25px;
   }
   /* Ensure the image adapts properly */
   .img_1 img.headImage {
